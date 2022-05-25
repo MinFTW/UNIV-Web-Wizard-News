@@ -4,7 +4,7 @@ const postBank = require('./postBank');
 
 const app = express();
 
-const PORT = 1337;
+const { PORT = 1337 } = process.env;
 app.listen(PORT, () => {
   console.log(`App listening in port ${PORT}`);
 });
@@ -77,9 +77,8 @@ app.get('/posts/:id', (req, res) => {
   }
 });
 
-
 app.use((err, req, res, next) => {
-  console.error(err.stack)
+  console.error(err.stack);
 
   const html = `
     <!DOCTYPE html>
@@ -94,7 +93,7 @@ app.use((err, req, res, next) => {
         <p>Accio Page! 🧙‍♀️ ... Page Not Found</p>
       </div>
     </body>
-    </html>`
+    </html>`;
 
-  res.status(404).send(html)
-})
+  res.status(404).send(html);
+});
