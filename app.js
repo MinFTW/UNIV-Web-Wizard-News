@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-const postBank = require('./postBank');
+const postBank = require('./server/postBank');
 const postList = require('./views/postList').postList;
 const postDetails = require('./views/postDetails').postDetails;
 const errorPage = require('./views/errorPage').errorPage;
