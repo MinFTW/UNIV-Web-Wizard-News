@@ -29,4 +29,4 @@ const postList = (posts) => html `<DOCTYPE html>
   </html>
 </DOCTYPE> `;
 
-module.exports = { postList };
+module.exports = postList;

@@ -14,4 +14,4 @@ const errorPage = () => html `<!DOCTYPE html>
     </body>
   </html>`;
 
-module.exports = { errorPage };
+module.exports = errorPage;

@@ -21,4 +21,4 @@ const postDetails = (post) => html `<DOCTYPE html>
   </html> 
 `;
 
-module.exports = { postDetails };
+module.exports = postDetails;
