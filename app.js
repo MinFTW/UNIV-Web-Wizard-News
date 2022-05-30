@@ -6,11 +6,7 @@ const postDetails = require('./views/postDetails');
 const errorPage = require('./views/errorPage');
 
 const app = express();
-
 const { PORT = 1337 } = process.env;
-app.listen(PORT, () => {
-  console.log(`App listening in port ${PORT}`);
-});
 
 app.use(morgan('dev'));
 app.use(express.static('public'));
@@ -32,8 +28,13 @@ app.get('/posts/:id', (req, res) => {
   }
 });
 
+// ERROR HANDLING (CUSTOM)
 app.use((err, req, res, next) => {
   console.error(err.stack);
 
   res.status(404).send(errorPage());
+});
+
+app.listen(PORT, () => {
+  console.log(`App listening in port ${PORT}`);
 });
